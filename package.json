@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "iWeather provide the local weather to the user, with possibility to change the location.",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "iWeather",
+    "Local",
+    "weather",
+    "weather app",
+    "get",
+    "my",
+    "local",
+    "weather",
+    "weather",
+    "forcast"
+  ],
+  "author": "@ephraimIlunga",
+  "license": "MIT",
+  "dependencies": {
+    "@glidejs/glide": "github:glidejs/glide",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "fetch-jsonp": "^1.1.3",
+    "parcel-bundler": "^1.10.3"
+  }
+}

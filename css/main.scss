@@ -1,0 +1,1966 @@
+// Author : Ephraim Ilunga
+// Licence : MIT
+// @December_2018
+// Twitter : @EphraimIlunga
+// Dribbble : Ephraim Ilunga
+// LinkedIn : Ephraim Ilunga
+
+// ephreycleophace@gmail.com
+
+/***************** general style *************/
+* {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  transition: all 0.3s;
+}
+
+$colors: (
+  main_bg: #140303,
+  primary: #ffed0f,
+  secondary: #707070,
+  third: #806262,
+  icon_on_yellow: #8d8d89,
+  icon_tomorrow: #8d8d89,
+  icon_8days: #cbcbc9,
+  sg: #1D1D1D,
+  whiter: rgba(248, 248, 248, 0.767)
+);
+
+/************* @function initialisation  *****************/
+
+@function color($colorName) {
+  @return map-get($colors, $colorName);
+}
+
+/************ body style *****************/
+
+body {
+  background-color: color(main_bg);
+
+  div.on_action {
+    background-color: color(primary);
+  }
+
+  div.follow_along {
+    position: absolute;
+    left:0;
+    top: 0;
+    z-index: 9999999999999;
+    transition: all 0.8s;
+  }
+}
+
+/************* main styele ******************/
+div.hidden,
+.hidden_on_load {
+  opacity: 0 !important;
+  display: none;
+  transition: all 1s;
+  animation: fadeout 1s ease-in forwards;
+}
+
+@keyframes fadeout {
+  from {
+    display: block;
+    opacity: 1;
+  } to {
+    *transform: scale(0.0);
+    opacity: 0;
+  }
+}
+
+
+
+main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  @media only screen and (min-width: 1300px) {
+    width: 1360px;
+    margin: auto;
+  }
+
+  @media only screen and (min-height: 760px) {
+    overflow: auto;
+  }
+  //start wrapper
+  #wrapper {
+    width: 85%;
+    height: 100%;
+    margin: 20px auto 30px auto;
+
+    // ************** Start top conatiner **************///
+
+    div.top_container {
+      width: 100%;
+      display: flex;
+
+      // start today prevision block style
+      div.today_previson {
+        background-color: color(primary);
+        padding: 25px 50px 0px 50px;
+        border-radius: 30px;
+        height: 520px;
+
+        div.today_title {
+          width: 100%;
+
+          h1 {
+            font-size: 60px;
+            font-weight: 300;
+          }
+        }
+
+        // today temperature number
+        div.today_temperature {
+          width: 100%;
+          display: flex;
+
+          div.today_temperature_number {
+            padding: 0 !important;
+
+            p {
+              font-size: 240px;
+              font-weight: 300;
+              margin-top: -35px;
+              margin-left: -10px;
+              margin-bottom: -30px;
+              color: color(main_bg);
+            }
+          }
+
+          div.today_temperature_measure {
+            display: flex;
+            align-items: center;
+            height: 8%;
+
+            p {
+              margin-top: 0;
+              color: color(main_bg);
+            }
+
+            p.today_degree_symbol {
+              font-size: 35px;
+              font-weight: 300;
+              margin-right: 10px;
+            }
+
+            p.today_degree_character {
+              font-size: 60px;
+              font-weight: 400;
+            }
+          }
+        }
+
+        //today overcase and date
+
+        div.today_data_and_overcast {
+          width: 100%;
+
+          p {
+            font-size: 30px;
+            font-weight: 200;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            color: color(main_bg);
+          }
+        }
+
+        div.today_location_city_country {
+          width: 100%;
+
+          p {
+            font-size: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: color(main_bg);
+          }
+        }
+
+        div.today_status_feature {
+          display: flex;
+
+          div.today_max_temp,
+          div.today_min_temp,
+          div.today_cloud_percent {
+            display: flex;
+            flex-basis: 0;
+
+            p {
+              color: color(main_bg);
+            }
+          }
+
+          div.today_min_temp div.today_min_temp_icon img {
+            width: 30px;
+          }
+
+          div.today_max_temp div.today_max_temp_icon img {
+            width: 33px;
+          }
+
+          div.today_cloud_percent div.today_cloud_percent_icon img {
+            width: 49px;
+          }
+
+          // today max temperature  style
+
+          div.today_max_temp_icon {
+            display: flex;
+            align-items: center;
+            *background-color: #fff;
+            margin-right: 13px;
+          }
+
+          div.today_max_temp_number {
+            display: flex;
+            align-items: center;
+            *background-color: color(secondary);
+
+            p {
+              font-size: 35px;
+              font-weight: 200;
+              margin-right: 4px;
+            }
+          }
+
+          div.today_max_temp_measure_and_title {
+            *background-color: #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 70px;
+            margin-right: 15px;
+
+            div.today_max_temp_measure_symbol_and_letter {
+              display: flex;
+            }
+
+            div.today_max_temp_measure_symbol_and_letter {
+              p.symbol {
+                font-size: 12px;
+                margin-right: 2px;
+              }
+              p.degree {
+                font-size: 13px;
+              }
+            }
+
+            div.today_max_temp_title p {
+              margin-top: 2px;
+              font-size: 13px;
+            }
+          }
+
+          //today min temperature style
+
+          div.today_min_temp_icon {
+            display: flex;
+            align-items: center;
+            *background-color: #fff;
+            margin-right: 13px;
+          }
+
+          div.today_min_temp_number {
+            display: flex;
+            align-items: center;
+            *background-color: color(secondary);
+
+            p {
+              font-size: 35px;
+              font-weight: 200;
+              margin-right: 4px;
+            }
+          }
+
+          div.today_min_temp_measure_and_title {
+            *background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 70px;
+            margin-right: 15px;
+
+            div.today_min_temp_measure_symbol_and_letter {
+              display: flex;
+            }
+
+            div.today_min_temp_measure_symbol_and_letter {
+              p.symbol {
+                font-size: 12px;
+                margin-right: 2px;
+              }
+              p.degree {
+                font-size: 13px;
+              }
+            }
+
+            div.today_min_temp_title p {
+              margin-top: 2px;
+              font-size: 13px;
+            }
+          }
+
+          //today cloud temperature style
+
+          div.today_cloud_percent_icon {
+            display: flex;
+            align-items: center;
+            *background-color: #fff;
+            margin-right: 5px;
+          }
+
+          div.today_cloud_percent_number {
+            display: flex;
+            align-items: center;
+            *background-color: color(secondary);
+
+            p {
+              font-size: 35px;
+              font-weight: 200;
+              margin-right: 2px;
+            }
+          }
+
+          div.today_cloud_percent_measure_and_title {
+            *background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            div.today_measure_symbol_and_letter {
+              p {
+                font-size: 13px;
+              }
+            }
+
+            div.today_min_temp_title {
+              margin-top: 2px;
+              p {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+      //end today prevision block style
+
+      // start tomorrow block and next two days
+      div.tomorrow_and_next_two_days_previson {
+        *background-color: #fff;
+        flex: 1;
+        padding: 26px 0px 0px 90px;
+
+        div.tomorrow_and_next_two_days_wrapper {
+          width: 100%;
+
+          div.tomorrow_block {
+            width: 100%;
+
+            div.tomorrow_left_and_right_section_wrapper {
+              display: flex;
+
+              div.tomorrow_left_section {
+                *background-color: #ccc;
+                flex: 1;
+
+                div.tomorrow_title {
+                  width: 100%;
+
+                  p {
+                    font-size: 40px;
+                    font-weight: 300;
+                    letter-spacing: 1px;
+                    color: color(secondary);
+                  }
+                }
+
+                div.tomorrow_measure {
+                  display: flex;
+
+                  div.tomorrow_number p {
+                    font-size: 150px;
+                    font-weight: 300;
+                    margin-top: -10px;
+                    *background-color: #fff;
+                    margin-right: -5px;
+                    color: color(secondary);
+                  }
+
+                  div.tomorrow_symbol_and_degree {
+                    display: flex;
+                    align-items: center;
+                    height: 80%;
+                    margin-top: 10px;
+                    *background-color: #fff;
+                    color: color(secondary);
+
+                    p.symbol {
+                      font-size: 35px;
+                      margin-right: 5px;
+                      font-weight: 300;
+                    }
+
+                    p.degree {
+                      font-size: 45px;
+                      font-weight: 400;
+                    }
+                  }
+                }
+              }
+
+              div.tomorrow_right_section {
+                flex: 1;
+
+                div.tomorrow_max_min_temp_cloud {
+                  width: 100%;
+
+                  // start tomorrow max temperature style 
+                  div.tomorrow_max_temp {
+                    display: flex;
+                    margin-bottom: 30px;
+
+                    div.tomorrow_max_icon { 
+                      display: flex; 
+                      align-items: center;
+
+                      img {
+                        width: 35px;
+                        margin-right: 33px;
+                        margin-left: 30px;
+                      }
+                    }
+
+                    div.tomorrow_max_temp_number {
+                      display: flex;
+                      align-items: center;
+
+                      p {
+                        font-size: 35px;
+                        font-weight: 200;
+                        margin-right: 5px;
+                        color: color(primary);
+                      }
+                    }
+
+                    div.tomorrow_max_temp_symbol_degree_and_title {
+                      width: 100%;
+                      *background-color: #ccc;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+
+                      div.tomorrow_max_temp_symbol {
+                        display: flex;
+                        align-items: center;
+                        color: color(secondary);
+
+                        p.symbol {
+                          font-size: 11px;
+                          margin-right: 2px;
+                        }
+
+                        p.degree {
+                          font-size: 13px;
+                        }
+                      }
+
+                      div.tomorrow_max_title {
+                        p {
+                          font-size: 14px;
+                          font-weight: 200;
+                          letter-spacing: 1px;
+                          color: color(primary);
+                        }
+                      }
+                    }
+                  }
+                  // end tomorrow max temperature style /
+
+                  // start tomorrow min temperature style
+                  div.tomorrow_min_temp {
+                    display: flex;
+                    margin-bottom: 30px;
+
+                    div.tomorrow_min_icon { 
+                      display: flex; 
+                      align-items: center;
+
+                      img {
+                        width: 35px;
+                        margin-right: 33px;
+                        margin-left: 30px;
+                      }
+                    }
+
+                    div.tomorrow_min_temp_number {
+                      display: flex;
+                      align-items: center;
+
+                      p {
+                        font-size: 35px;
+                        font-weight: 200;
+                        margin-right: 5px;
+                        color: color(primary);
+                      }
+                    }
+
+                    div.tomorrow_min_temp_symbol_degree_and_title {
+                      width: 100%;
+                      *background-color: #ccc;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+
+                      div.tomorrow_min_temp_symbol {
+                        display: flex;
+                        align-items: center;
+                        color: color(secondary);
+
+                        p.symbol {
+                          font-size: 11px;
+                          margin-right: 2px; 
+                        }
+
+                        p.degree {
+                          font-size: 13px;
+                        }
+                      }
+
+                      div.tomorrow_min_title {
+                        p {
+                          font-size: 14px;
+                          color: color(primary);
+                          font-weight: 200;
+                          letter-spacing: 1px;
+                        }
+                      }
+                    }
+                  }
+                  // end tomorrow min temperature syyle /
+
+                  // start tomorrow cloud  style
+                  div.tomorrow_cloud {
+                    display: flex;
+
+                    div.tomorrow_cloud_icon { 
+                      display: flex; 
+                      align-items: center;
+
+                      img {
+                        width: 43px;
+                        margin-right: 25px;
+                        margin-left: 30px;
+                      }
+                    }
+
+                    div.tomorrow_cloud_number {
+                      display: flex;
+                      align-items: center;
+
+                      p {
+                        font-size: 35px;
+                        font-weight: 200;
+                        margin-right: 5px;
+                        color: color(primary);
+                      }
+                    }
+
+                    div.tomorrow_cloud_symbol_degree_and_title {
+                      width: 100%;
+                      *background-color: #ccc;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+
+                      div.tomorrow_cloud_symbol {
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                          font-size: 13px;
+                          color: color(secondary);
+                        }
+                      }
+
+                      div.tomorrow_min_title {
+                        p {
+                          font-size: 14px;
+                          color: color(primary);
+                          font-weight: 200;
+                          letter-spacing: 1px;
+                        }
+                      }
+                    }
+                  }
+                  // end tomorrow cloud temperature syyle /
+                }
+
+              }
+            }
+
+            div.tomorrow_date_and_overcast {
+              width: 100%;
+              padding-bottom: 15px;
+              margin-bottom: 15px;
+              border-bottom: 1px solid #5352527e;
+
+              p {
+                font-size: 20px;
+                font-weight: 300;
+                color: color(primary);
+                letter-spacing: 1px;
+              }
+            }
+          }
+
+          div.next_two_days {
+            width: 100%;
+            *background-color: #fff;
+            display: flex;
+            
+            div {
+              flex: 1;
+              text-align: center;
+            }
+
+            div.next_two_days_left {
+              width: 100%;
+
+              div.next_two_days_left_overcast_title {
+                width: 100%;
+
+                p {
+                  font-size: 25px;
+                  font-weight: 300;
+                  color: color(secondary);
+                  margin-bottom: 10px;
+                  letter-spacing: 1px;
+                }
+              }
+
+              div.next_two_days_left_date {
+                width: 100%;
+
+                p {
+                  font-size: 15px;
+                  font-weight: 300;
+                  color: color(primary);
+                  letter-spacing: 1px;
+                }
+              }
+
+              div.next_two_days_left_degree_symbol {
+                width: 60%;
+                display: flex;
+                *background-color: #ccc;
+                margin: -5px auto auto auto;
+
+                div {
+                  *flex: 1;
+                }
+                div.next_two_days_left_degree_number {
+                  p {
+                    font-size: 100px;
+                    font-weight: 300;
+                    text-align: right;
+                    color: color(secondary);
+                  }
+                }
+
+                div.next_two_days_left_degree_symbol {
+                  display: flex;
+                  margin-top: 14px;
+                  margin-left: 3px;
+                  color: color(secondary);
+                  
+                  p.symbol {
+                    font-size: 20px;
+                    display: flex; 
+                    align-items: center;
+                    margin-right: 3px;
+
+                  }
+
+                  p.degree {
+                    font-size: 30px;
+                  }
+                }
+              }
+
+              div.next_two_days_left_open_button {
+                  width: 75%;
+                  margin: auto;
+                  *background-color: #898;
+
+                  button {
+                    width: 100%;
+                    padding: 10px 30px;
+                    background-color: color(primary);
+                    text-align: center;
+                    border-radius: 20px;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+
+                    &:hover {
+                      background-color: rgba(255, 255, 255, 0.1);
+                      color: color(primary);
+                    }
+                  }
+              }
+            }
+
+
+            div.next_two_days_right {
+              width: 100%;
+
+              div.next_two_days_right_overcast_title {
+                width: 100%;
+
+                p {
+                  font-size: 25px;
+                  font-weight: 300;
+                  color: color(secondary);
+                  margin-bottom: 10px;
+                  letter-spacing: 1px;
+                }
+              }
+
+              div.next_two_days_right_date {
+                width: 100%;
+
+                p {
+                  font-size: 15px;
+                  font-weight: 300;
+                  color: color(primary);
+                  letter-spacing: 1px;
+                }
+              }
+
+              div.next_two_days_right_degree_symbol {
+                width: 60%;
+                display: flex;
+                *background-color: #ccc;
+                margin: -5px auto auto auto;
+
+                div {
+                  *flex: 1;
+                }
+                div.next_two_days_right_degree_number {
+                  p {
+                    font-size: 100px;
+                    font-weight: 300;
+                    text-align: right;
+                    color: color(secondary);
+                  }
+                }
+
+                div.next_two_days_right_degree_symbol {
+                  display: flex;
+                  margin-top: 14px;
+                  margin-left: 3px;
+                  color: color(secondary);
+                  
+                  p.symbol {
+                    font-size: 20px;
+                    display: flex; 
+                    align-items: center;
+                    margin-right: 3px;
+
+                  }
+
+                  p.degree {
+                    font-size: 30px;
+                  }
+                }
+              }
+
+              div.next_two_days_right_open_button {
+                  width: 75%;
+                  margin: auto;
+                  *background-color: #898;
+
+                  button {
+                    width: 100%;
+                    padding: 10px 30px;
+                    background-color: color(primary);
+                    text-align: center;
+                    border-radius: 20px;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+
+                    &:hover {
+                      background-color: rgba(255, 255, 255, 0.1);
+                      color: color(primary);
+                    }
+                  }
+              }
+            }
+          }
+        }
+      }
+      // end tomorrow block and next two days /
+    }
+
+    // ************** End top container **************///
+
+
+    // ************** Start Next 8Days **************///
+
+    div.next_8days_container {
+      width: 100%;
+      display:flex;
+      margin-top: 30px;
+
+      div.next_8days_title {
+        display: flex;
+        align-items: center;
+        width: 250px;
+
+        p {
+          font-size: 30px;
+          font-weight: 100;
+          letter-spacing: 1px;
+          color: color(primary);
+          margin-right: 10px;
+        }
+      }
+
+
+      div.next_8days_forcast_blocks_container {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        div.next_8days_block {
+          width: 104px;
+          height: 110px;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 30px;
+          padding: 15px 6px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: color(primary);
+            p, div { color: color(main_bg) !important;}
+          }
+
+          div.next_8days_block_title {
+            width: 100%;
+            text-align: center;
+
+
+            p.top_title {
+              font-size: 12px;
+              color: color(primary);
+              font-weight: 200;
+              letter-spacing: 0.7px;
+            }
+          }
+
+          div.next_8days_block_icon {
+            width: 100%;
+            text-align: center;
+            margin: 5px 0 -2px 0;
+            *background-color: #fff;
+
+            img {
+              width: 40px;
+            }
+          }
+
+          div.next_8days_block_temperature_symbol_title {
+            display: flex;
+            color: color(primary);
+            *background-color: #fff;
+            width: 85%;
+            margin: auto;
+
+            div.next_8days_block_temperature_number {
+              p {
+                font-size: 22px;
+                font-weight: 200;
+                margin-right: 5px;
+              }
+            }
+
+            div.next_8days_block_temperature_symbol {
+              display: flex;
+
+              p.symbol {
+                font-size: 8px;
+                margin-right: 2px;
+                font-weight: 200;
+              }
+
+              p.degree {
+                font-size: 10px;
+                display: flex;
+                align-items: center;
+                font-weight: 200;
+
+              }
+            }
+
+            div.next_8days_block_title {
+              p {
+                font-size: 8px;
+                font-weight: 300;
+                letter-spacing: 1px;
+                margin-top: 1px;
+              }
+            }
+
+          }
+        }
+      }
+    }
+    // ************** End Next 8Days **************///
+  }
+
+}
+
+
+
+  // ************** signature @ephraimIlunga**************///
+
+  div.signature_fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    *width: 100vw;
+    *height: 100vh;
+    position: fixed;
+    padding: 0 20px;
+    top: 0;
+    left:0;
+    margin-top: 20%;
+    margin-left: -210px;
+    transform: rotate(90deg);
+
+      &:hover {
+        background-color: color(primary);
+
+        div.signature_content p {
+          color: color(main_bg);
+        }
+      }
+
+    div.signature_content {
+      p {
+        display: inline-block;
+        color:rgba(255, 255, 255, 0.1)
+      }
+
+      p.brand {
+        font-size: 70px;
+        font-weight: 200 !important;
+      }
+
+      p.brand_initial {
+          font-size: 70px;
+          font-weight: 300 !important;
+          
+      }
+
+      p.copyright {
+        font-size: 25px;
+        font-weight: 300;
+      }
+
+    }
+  }
+
+
+  // authorisation to access location
+
+  div.authorisation_panel {
+    width: 100vw;
+    height: 100vh;
+    background: color(main_bg) url('../icon/autho_bg.svg') repeat;
+    background-size: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    *opacity: 0;
+    z-index: 99999;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    *display: none;
+
+    div.loader_container {
+      width: 100%;
+
+      div.loader_title {
+        font-size: 40px;
+        font-weight: 300;
+        color: #806262;
+      }
+
+      div.loader_image {
+        text-align: center !important;
+      }
+    }
+
+      div.authorisation_panel_content {
+        background-color: color(whiter);
+        padding: 70px 80px 0 80px;
+        border-radius: 20px;
+
+          div.authorisation_panel_title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 5px;
+
+            p {
+              font-size: 70px;
+              color: #806262;
+              font-weight: 400;
+            }
+          }
+
+          div.authorisation_panel_sub_title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+
+            p {
+              font-size: 45px;
+              font-weight: 300;
+              color: #806262;
+              letter-spacing: 1px;
+            }
+          }
+
+
+          div.weather_filter_para {
+            width: 100%;
+
+            div.weather_filter_para_hide_close_tab {
+              width: 100%;
+              display: flex;
+              align-items: center;
+
+              div.weather_filter_para_title {
+              padding:10px;
+              border-top: 1px solid #8062621c;
+              border-left: 1px solid #8062621c;
+              border-right: 1px solid #8062621c;
+                p {
+                  font-size: 19px;
+                  font-weight: 400;
+                  color: #806262;
+                }
+              }
+
+              div.weather_filter_para_icons {
+                display: flex;
+                margin-left: auto;
+                *background-color: #ccc;
+                div {
+                  width: 40px;
+                  height: 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 50%;
+                  *background-color: #8062621f;
+
+                  &:hover {
+                    background-color: #80626263;
+                    cursor: pointer;
+                  }
+                }
+
+                div.hide_show_option {
+                  img {
+                    width:22px;
+                  }
+                }
+
+                div.close_option {
+                    margin-left: 10px;
+                    img {
+                      width: 15px;
+                    }
+                }
+              }
+            }
+
+            div.weather_filter_para_form {
+              width: 100%;
+              display: flex;
+              padding: 10px 10px 3px 10px;
+              margin-bottom: 40px;
+              border: 1px solid #8062621c;
+
+
+              div.input_container {
+                position: relative;
+                flex: 1;
+                margin: 4px;
+
+                  div.dropdown_options {
+
+                      *display: none;
+                      width: 100%;
+                      max-height: 200px;
+                      overflow-y: auto;
+                      background-color: #f8f8f8e7;
+                      position: absolute;
+                      z-index: 9999;
+                      margin-left: 0px; 
+                      
+                      div.text_indicatif {
+                        width: 100%;
+                        font-size: 14px;
+                        color: #806262;
+                        font-weight: 400;
+
+                          div.indicatif_title {
+                            width: 100%;
+                            border-bottom:  1px solid #8062621c;
+                            padding: 10px 10px;
+                            font-style: italic;
+                            margin-bottom: 10px;
+                            line-height: 20px;
+                          }
+
+                          div.indicatif_message {
+                            padding: 10px 10px;
+                            margin-bottom: 10px;
+                            line-height: 15px;  
+                          }
+                      }
+
+                      div.initial_languages {
+                        width: 100%;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        border-bottom:  1px solid #8062621c;
+                       
+                            &:hover {
+                              background-color: color(primary);
+                            }
+
+                          div.contents {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                          }
+
+                          div.language_inital {
+                            width: 30%;
+                            justify-content: center;
+                            color: #806262;
+                            font-weight: 400;
+                            font-size: 16px;
+                            border-right:  1px solid #8062621c;
+                            letter-spacing: 0.5px;
+                          }
+
+                          span.language_word {
+                            width: 70%;
+                            padding-left: 20px;
+                            color: #806262;
+                            font-weight: 400;
+                            font-size: 14px;
+                            letter-spacing: 0.5px;
+                            text-transform: capitalize !important;
+                            cursor: pointer;
+
+                              span.highLight {
+                                font-weight: 500;
+                                text-decoration: underline;
+                              }
+                          }
+                      }
+                    
+                      div.number_days_container {
+                        width: 100%;
+                        height: 100%;
+
+                        div.block_numbers {
+                          width: 100%;
+                          display: flex;
+                          padding: 10px;
+
+                          div.number_days {
+                            width: 40px;
+                            height: 37px;
+                            color: #806262;
+                            text-align: center;
+                            font-size: 14px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 0 10px;
+                            border-radius: 50%;
+                            background-color: #8062621f;
+
+                                &:hover {
+                                  background-color: color(primary);
+                                  cursor: pointer;
+                                }
+                          }
+                        }
+                      }
+                  }
+              }
+
+              div input {
+                width: 100%;
+                border: 1px solid #806262;
+                padding: 10px 10px;
+                margin-bottom: 5px;
+                color: #806262;
+                *border-radius: 5px;
+
+                &:focus {
+                  border: 1px solid color(primary);
+                }
+              }
+              div input#days,
+              div input#unit {
+                  cursor: pointer;
+                  background-repeat: no-repeat;
+                  background-size: 30px;
+                  background-position: right;
+              }
+
+              div input.dropListClose {
+                background-image: url('../icon/dow_input.svg');
+              }
+
+              div input.dropListOpen {
+                background-image: url('../icon/up_input.svg');
+              }
+
+              div input::placeholder {
+                  color: rgba(128, 98, 98, 0.589);
+                  font-size: 14px;
+                  font-weight: 400;
+                  letter-spacing: 0.5px;
+              }
+                
+
+              div.language_droplist {
+                width: 100%;
+              }
+
+              div > p.default_text {
+                font-size: 12px;
+                font-weight: 400;
+                letter-spacing: 0.6px;
+                color: #806262;
+              }
+            }
+          }
+
+          div.authorisation_panel_buttons {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            div.authorisation_panel_button_left {
+              width: 100%;
+              text-align: center;
+
+              button {
+                padding: 12px 30px;
+                font-size: 15px;
+                border-radius: 30px;
+                font-weight: 400;
+                letter-spacing: 0.4px;
+                cursor: pointer;
+              }
+
+              button.agree {
+                margin-right: 40px;
+                background-color: color(primary);
+
+                &:hover {
+                  background-color: rgba(255, 255, 255, 0.1);
+                  color: color(main_bg);
+
+                }
+              }
+
+              button.reject {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #806262;
+
+                &:hover {
+                  background-color: color(primary);
+                  color: color(main_bg);
+                  
+                }
+              }
+            }
+          }
+
+          div.authorisation_panel_copyright {
+            width: 100%;
+            margin-top: 80px;
+            margin-bottom: 20px;
+
+            p {
+              text-align: center;
+              font-size: 14px;
+              letter-spacing: 1px;
+              color: rgba(0, 0, 0, 0.2);
+            }
+          }
+      }
+  }
+
+
+
+div.goodbye_message {
+    background-color: color(whiter);
+    padding: 50px 100px 70px 100px;
+    border-radius: 20px;
+    text-align: center;
+
+    p.main_message {
+      font-size: 70px;
+      font-weight: 500px;
+      color: #806262;
+      margin-bottom: 20px;
+    }
+
+    p.sub_message {
+      font-size: 35px;
+      font-weight: 300;
+      color: #806262;
+      margin-bottom: 15px;
+    }
+
+    p.sub_message_jok {
+      font-size: 23px;
+      font-weight: 400;
+      color: #806262;
+    }
+}
+
+
+
+
+
+
+
+
+/// single view panel
+
+div.fadeInSingleContainer {
+  z-index: -999999999999999999999 !important;
+  opacity: 0 !important;
+  *animation: fadeIn 0.7s ease forwards;
+}
+
+div.single_view_panel_conatiner {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.863); //url(../icon/singleview/main_bg.svg) center center no-repeat/cover;
+  //background-color: #ccc;
+  color: #806262;
+
+  div.fadeInTheSingle {
+    transform: translateX(600px) !important;
+  }
+
+  div.loader_single {
+    position: relative;
+    height: 100%;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.841);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+  }
+
+  div.single_view_panel_content {
+    width: 600px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.884);
+    margin-left: auto;
+    padding: 20px;
+
+    div.weather_single_close {
+      width: 100%;
+      text-align: right;
+
+      img {
+        width: 20px;
+        margin-left: auto;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    div.weather_single_title {
+      width: 100%;
+      margin-top: -25px;
+
+      p {
+        font-size: 70px;
+        font-weight: 200;
+
+      }
+    }
+
+    div.weather_single_date {
+      width: 100%;
+      display: flex;
+
+      div p {
+        font-weight: 200;
+      }
+
+      div.number_day {
+        font-size: 30px;
+      }
+
+      div.exposant {
+        font-size: 20px;
+        margin-right: 10px;
+      }
+
+      div.month_year {
+        font-size: 30px;
+      }
+    }
+
+    div.weather_single_temperature_number {
+      width: 100%;
+      display: flex;
+
+      div.weather_single_number {
+        p {
+          font-size: 200px;
+          font-weight: 100;
+          font-style: italic;
+          margin-top: -20px;
+        }
+      }
+
+      div.weather_single_symbole_degree {
+        display: flex;
+        height: 20px;
+        margin-top: 22px;
+        
+
+        div {
+          display: flex;
+          align-items: center;
+
+          p {
+            font-weight: 200;
+          }
+        }
+        
+        div.symble {
+          p {
+            font-size: 30px;
+          }
+        }
+
+        div.degree {
+          p {
+            font-size: 40px;
+            margin-left: 8px;
+            margin-top: 4px;
+          }
+        }
+      }
+    }
+
+    div.weather_single_forcast_description {
+      width: 100%;
+      margin-top: -20px;
+      margin-bottom: 20px;
+
+      p {
+        font-size: 30px;
+        font-weight: 200;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    div.weather_single_city_country {
+      width: 100%;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #8062624b;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 22px;
+        margin-right: 10px;
+      }
+
+      p {
+        font-size: 35px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
+      
+    }
+
+    div.weahter_more_info_arrows_container {
+      width: 100%;
+
+      div.weahter_more_info_arrows {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        p {
+          font-size: 16px;
+          font-weight: 300;
+          letter-spacing: 0.8px;
+        }
+      }
+
+      div.weather_single_arrows {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 45px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        img.eRight {
+          margin-left: 20px;
+
+          &:hover {
+            background-color: #80626223;
+            transform: translateX(5px)
+          }
+        }
+
+        img.eLeft {
+          
+          &:hover {
+            background-color: #80626223;
+            transform: translateX(-5px)
+          }
+        }
+      }
+
+    }
+
+    div.weather_slider_block {
+      margin-top: 10px;
+
+      div.weather_slider_block_content {
+
+        div.glide__slide {
+          height: 170px;
+          background-color: #fff;
+          box-shadow: 0px 10px 10px -2px rgba(238, 238, 238, 0.655);
+          border-radius: 30px;
+          padding: 10px 10px;
+
+          div.more_details_title {
+            width: 100%;
+            height: 60px;
+            text-align: center;
+
+            p.more_details_title_text {
+              font-size: 15px;
+              font-weight: 200;
+              line-height: 18px;
+              letter-spacing: 0.5px;
+            }
+
+          }
+
+          div.more_details_numbers {
+            width: 100%;
+            display: flex;
+            margin-top: 3px;
+    
+            div.more_details_numbers_left {
+                display: flex;
+                flex: 1;
+                border-right: 0.5px solid #8062624f;
+
+                div.more_details_number {
+                  
+                  p {
+                    font-size: 25px;
+                    font-weight: 300;
+                    margin-right: 1.6px;
+                  }
+                }
+
+                div.more_details_degree_symbole_sub_title {
+                    
+                  div.more_details_degree_symbole {
+                    height: 50%;
+                    display: flex;
+
+                    div.symbole {
+                      display: flex;
+                      align-items: center;
+
+                      p {
+                        font-size: 10px;
+                        font-weight: 200;
+                        margin-right: 2px;
+                      }
+                    }
+
+                    div.degree {
+                      display: flex;
+                      align-items: center;
+                      
+                      p {
+                        font-size: 10px;
+                        font-weight: 200;
+                        margin-top: 2px;
+                      }
+                    }
+                  }
+
+                  div.measure {
+                    height: 50%;
+
+                    p {
+                      font-size: 10px;
+                      font-weight: 200;
+                      margin-top: -1px;
+                      letter-spacing: 0.6px;
+                    }
+                  }
+                }
+            }
+
+            div.more_details_numbers_right {
+                display: flex;
+                flex: 1;
+
+                div.right_float {
+                  margin-left: auto;
+                  display: flex;
+                  
+                    div.more_details_number {
+                      
+                      p{
+                        font-size: 25px;
+                        font-weight: 300;
+                        margin-right: 1.6px;
+                      }
+                    }
+
+                    div.more_details_degree_symbole_sub_title {
+                        
+                      div.more_details_degree_symbole {
+                        height: 50%;
+                        display: flex;
+
+                        div.symbole {
+                          display: flex;
+                          align-items: center;
+
+                          p {
+                            font-size: 10px;
+                            font-weight: 200;
+                            margin-right: 2px;
+                          }
+                        }
+
+                        div.degree {
+                          display: flex;
+                          align-items: center;
+                          
+                          p {
+                            font-size: 10px;
+                            font-weight: 200;
+                            margin-top: 2px;
+                          }
+                        }
+                      }
+
+                      div.measure {
+                        height: 50%;
+
+                        p {
+                          font-size: 10px;
+                          font-weight: 200;
+                          margin-top: -1px;
+                          letter-spacing: 0.6px;
+                        }
+                      }
+                    }
+
+                }
+                
+
+            }
+          }
+
+          div.weather_single_icon {
+            width: 100%;
+            height: 44px;
+            text-align: center !important;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img.temp {
+              width: 18px;
+            }
+
+            img.clouds {
+              width: 58px;
+            }
+
+            img.snow {
+              width: 47px;
+            }
+
+            img.humidity {
+              width: 50px;
+            }
+
+            img.precipitation {
+              width: 65px;
+              margin-top: 4px;
+            }
+
+            img.wind {
+              width: 47px;
+            }
+
+            img.sun {
+              width: 64px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    z-index: -999999999999999999999;
+    opacity: 0;
+  } to {
+    opacity: 1;
+    z-index: 999999999999999999999;
+  }
+}
+
+
+
+/// ************************ Loader ***********************//
+div.loader {
+  color: #806262;
+  font-size: 90px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 72px auto;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@-webkit-keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+div.outright {
+  transform: translateX(-302px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+}
+
+div.greet_the_user_container {
+  width: 300px;
+  background-color: #fff;
+  height: 300px;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  div.content_greet {
+    width: 100%;
+
+    div.flag_contaienr {
+      height: 100px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      background: url('../icon/download.png') center center no-repeat;
+      background-size: cover;
+      color: #806262;
+
+      &::after {
+        content : " ";
+        position: absolute;
+        width: 100%;
+        height: 33%;
+        background-image: linear-gradient(0deg, rgb(255, 255, 255), rgba(0, 0, 0, 0.158));
+        opacity: .7;
+      }
+      div.flag_content {
+        text-align: center;
+        z-index: 1;
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    div.message_content {
+      padding: 10px 20px;
+      text-align: center;
+      p {
+        margin-bottom: 5px;
+        font-weight: 400;
+
+        span {
+          font-weight: bold;
+        }
+      }
+      p.greet_text {
+        font-size: 20px;
+      }
+
+      p.greet_sub_text_ {
+        font-size: 15px;
+      }
+    }
+
+    div.local_languages {
+      width: 100%;
+      padding: 0 0px 0 10px;
+
+      p.language_title {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      div.language_container {
+        width: 100%;
+        height: 100px;
+        overflow: auto;
+
+
+        span {
+          font-size: 10px;
+          padding: 5px 10px;
+          background-color: #806262;
+          color: #fff;
+          letter-spacing: 0.5px;
+          border-radius: 5px;
+          margin-right: 5px;
+        }
+      }
+      
+    }
+  }
+}
