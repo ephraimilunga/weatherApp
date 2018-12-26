@@ -633,7 +633,7 @@ async function handleFetchWeatherData(obj) {
   // base URLs
 
   const userIpLink = "https://api.ipify.org?format=json";
-  const ipStackLink = "http://api.ipstack.com/"; /// e.g : http://api.ipstack.com/YourIpAddress?access_key=YourKey
+  const ipStackLink = "https://api.ipstack.com/"; /// e.g : http://api.ipstack.com/YourIpAddress?access_key=YourKey
   const weatherLink = "https://api.weatherbit.io/v2.0/forecast/daily?"; /// e.g : https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key={API_KEY}
   const translateLink = `https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181219T222649Z.bc0bff1e7a956a89.ced4abb02cd023aad687ede450469d919261b8d3&text=Today&text=Tomorrow&text=Next 8 Days&text=Open&text=More Details&lang=${language}`;
   // fetch user ip
@@ -675,6 +675,7 @@ await fetch(translateLink)
   .then(result => result.json())
   .then(translatedText => displayWeatherInfo(weatherData, translatedText, city))
   .catch(e => {
+      console.log('here')
     loaderContainer.innerHTML = erroMessage(e);
     return;
   });
@@ -805,7 +806,7 @@ function displayWeatherInfo(data, translatedText, cityObj) {
 
           <div class="today_max_temp">
               <!--start today min-temp -->
-              <div class="today_max_temp_icon"><img src="http://thecreativecloud.co.za/icons/max_temp_on_yellow.svg" alt="iweather"></div>
+              <div class="today_max_temp_icon"><img src="https://thecreativecloud.co.za/icons/max_temp_on_yellow.svg" alt="iweather"></div>
               <div class="today_max_temp_number"><p>${converNumber(
                 today.max_temp
               )}</p></div>
@@ -821,7 +822,7 @@ function displayWeatherInfo(data, translatedText, cityObj) {
 
           <div class="today_min_temp">
               <!--start today min-temp -->
-              <div class="today_min_temp_icon"><img src="http://thecreativecloud.co.za/icons/min_temp_on_yellow.svg" alt="iweather"></div>
+              <div class="today_min_temp_icon"><img src="https://thecreativecloud.co.za/icons/min_temp_on_yellow.svg" alt="iweather"></div>
               <div class="today_min_temp_number"><p>${converNumber(
                 today.min_temp
               )}</p></div>
@@ -837,7 +838,7 @@ function displayWeatherInfo(data, translatedText, cityObj) {
 
           <div class="today_cloud_percent">
               <!--start today min-temp -->
-              <div class="today_cloud_percent_icon"><img src="http://thecreativecloud.co.za/icons/cloud_percent_on_yellow.svg" alt="iweather"></div>
+              <div class="today_cloud_percent_icon"><img src="https://thecreativecloud.co.za/icons/cloud_percent_on_yellow.svg" alt="iweather"></div>
               <div class="today_cloud_percent_number"><p>${
                 today.clouds
               }</p></div>
@@ -881,7 +882,7 @@ function displayWeatherInfo(data, translatedText, cityObj) {
                         <div class="tomorrow_max_min_temp_cloud">
 
                             <div class="tomorrow_max_temp">
-                                <div class="tomorrow_max_icon"><img src="http://thecreativecloud.co.za/icons/max_temp_gray.svg" alt=""></div>
+                                <div class="tomorrow_max_icon"><img src="https://thecreativecloud.co.za/icons/max_temp_gray.svg" alt=""></div>
                                 <div class="tomorrow_max_temp_number"><p>${converNumber(
                                   tomorrow.max_temp
                                 )}</p></div>
@@ -897,7 +898,7 @@ function displayWeatherInfo(data, translatedText, cityObj) {
                             </div>
 
                             <div class="tomorrow_min_temp">
-                                <div class="tomorrow_min_icon"><img src="http://thecreativecloud.co.za/icons/min_temp_gray.svg" alt=""></div>
+                                <div class="tomorrow_min_icon"><img src="https://thecreativecloud.co.za/icons/min_temp_gray.svg" alt=""></div>
                                 <div class="tomorrow_min_temp_number"><p>${converNumber(
                                   tomorrow.min_temp
                                 )}</p></div>
@@ -913,7 +914,7 @@ function displayWeatherInfo(data, translatedText, cityObj) {
                             </div>
 
                             <div class="tomorrow_cloud">
-                                <div class="tomorrow_cloud_icon"><img src="http://thecreativecloud.co.za/icons/cloud_gray.svg" alt=""></div>
+                                <div class="tomorrow_cloud_icon"><img src="https://thecreativecloud.co.za/icons/cloud_gray.svg" alt=""></div>
                                 <div class="tomorrow_cloud_number"><p>${
                                   tomorrow.clouds
                                 }</p></div>
@@ -1094,7 +1095,7 @@ function displaySingleView() {
 
     <div class="fadeInTheSingle single_view_panel_content">
                 <div class="weather_single_close">
-                    <img class="closeSingleView" src="http://thecreativecloud.co.za/icons/singleview/close.svg" alt="">
+                    <img class="closeSingleView" src="https://thecreativecloud.co.za/icons/singleview/close.svg" alt="">
                 </div>
                 <div class="weather_single_title">
                     <p>${weekDay[getWeekDayName("day", datetime)]}</p>
@@ -1117,7 +1118,7 @@ function displaySingleView() {
 
                 <div class="weather_single_forcast_description"><p>${weather.description}</p></div>
                 <div class="weather_single_city_country">
-                    <img src="http://thecreativecloud.co.za/icons/singleview/location.svg" alt="">
+                    <img src="https://thecreativecloud.co.za/icons/singleview/location.svg" alt="">
                     <p>${city_name} - ${country_code}</p>
                 </div>
                 
@@ -1127,8 +1128,8 @@ function displaySingleView() {
                             <p>${moreDetails}</p>
                         </div>
                         <div class="weather_single_arrows glide__arrows" data-glide-el="controls">
-                            <img src="http://thecreativecloud.co.za/icons/singleview/arrow_left.svg" class="eLeft glide__arrow glide__arrow--left" data-glide-dir="<">
-                            <img src="http://thecreativecloud.co.za/icons/singleview/arrow_right.svg" class="eRight glide__arrow glide__arrow--right" data-glide-dir=">">
+                            <img src="https://thecreativecloud.co.za/icons/singleview/arrow_left.svg" class="eLeft glide__arrow glide__arrow--left" data-glide-dir="<">
+                            <img src="https://thecreativecloud.co.za/icons/singleview/arrow_right.svg" class="eRight glide__arrow glide__arrow--right" data-glide-dir=">">
                         </div>
                     </div>
                     
@@ -1192,7 +1193,7 @@ function displaySingleView() {
                                 </div>
 
                                 <div class="weather_single_icon">
-                                    <img class="temp" src="http://thecreativecloud.co.za/icons/singleview/thermometer1.svg" alt="">
+                                    <img class="temp" src="https://thecreativecloud.co.za/icons/singleview/thermometer1.svg" alt="">
                                 </div>
                             </div>
 
@@ -1247,7 +1248,7 @@ function displaySingleView() {
                                 </div>
 
                                 <div class="weather_single_icon">
-                                    <img class="clouds" src="http://thecreativecloud.co.za/icons/singleview/cloud.svg" alt="">
+                                    <img class="clouds" src="https://thecreativecloud.co.za/icons/singleview/cloud.svg" alt="">
                                 </div>
                             </div>
 
@@ -1308,7 +1309,7 @@ function displaySingleView() {
                                 </div>
                             
                                 <div class="weather_single_icon">
-                                    <img class="snow" src="http://thecreativecloud.co.za/icons/singleview/snowflake(1).svg" alt="">
+                                    <img class="snow" src="https://thecreativecloud.co.za/icons/singleview/snowflake(1).svg" alt="">
                                 </div>
                             </div>
 
@@ -1369,7 +1370,7 @@ function displaySingleView() {
                                 </div>
                             
                                 <div class="weather_single_icon">
-                                    <img class="humidity" src="http://thecreativecloud.co.za/icons/singleview/binoculars.svg" alt="">
+                                    <img class="humidity" src="https://thecreativecloud.co.za/icons/singleview/binoculars.svg" alt="">
                                 </div>
                             </div>
 
@@ -1430,7 +1431,7 @@ function displaySingleView() {
                                 </div>
                             
                                 <div class="weather_single_icon">
-                                    <img class="precipitation" src="http://thecreativecloud.co.za/icons/singleview/precipitation(1).svg" alt="">
+                                    <img class="precipitation" src="https://thecreativecloud.co.za/icons/singleview/precipitation(1).svg" alt="">
                                 </div>
                             </div>
 
@@ -1492,7 +1493,7 @@ function displaySingleView() {
                                 </div>
                             
                                 <div class="weather_single_icon">
-                                    <img class="wind" src="http://thecreativecloud.co.za/icons/singleview/wind.svg" alt="">
+                                    <img class="wind" src="https://thecreativecloud.co.za/icons/singleview/wind.svg" alt="">
                                 </div>
                             </div>
 
@@ -1555,7 +1556,7 @@ function displaySingleView() {
                                 </div>
                             
                                 <div class="weather_single_icon">
-                                    <img class="sun" src="http://thecreativecloud.co.za/icons/singleview/sunset.svg" alt="">
+                                    <img class="sun" src="https://thecreativecloud.co.za/icons/singleview/sunset.svg" alt="">
                                 </div>
                             </div>
 
@@ -1623,7 +1624,7 @@ function displaySingleView() {
                                 </div>
                             
                                 <div class="weather_single_icon">
-                                    <img src="http://thecreativecloud.co.za/icons/singleview/binoculars.svg" alt="">
+                                    <img src="https://thecreativecloud.co.za/icons/singleview/binoculars.svg" alt="">
                                 </div>
                             </div> -->
 
@@ -1666,7 +1667,6 @@ function displaySingleView() {
             hoverpause: false
         }).mount();
 
-        
     }, 1000);
 }
 
