@@ -1497,7 +1497,7 @@ div.goodbye_message p.sub_message_jok {
 }
 
 div.fadeInSingleContainer {
-  z-index: -999999999999999999999 !important;
+  z-index: -99999999999999999999999 !important;
   opacity: 0 !important;
 }
 
