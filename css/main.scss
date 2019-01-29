@@ -71,7 +71,6 @@ div.hidden,
     display: block;
     opacity: 1;
   } to {
-    *transform: scale(0.0);
     opacity: 0;
   }
 }
@@ -217,7 +216,6 @@ main {
           div.today_max_temp_icon {
             display: flex;
             align-items: center;
-            *background-color: #fff;
             margin-right: 13px;
           }
 
@@ -234,7 +232,6 @@ main {
           }
 
           div.today_max_temp_measure_and_title {
-            *background-color: #ccc;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -266,14 +263,12 @@ main {
           div.today_min_temp_icon {
             display: flex;
             align-items: center;
-            *background-color: #fff;
             margin-right: 13px;
           }
 
           div.today_min_temp_number {
             display: flex;
             align-items: center;
-            *background-color: color(secondary);
 
             p {
               font-size: 35px;
@@ -283,7 +278,6 @@ main {
           }
 
           div.today_min_temp_measure_and_title {
-            *background-color: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -315,14 +309,12 @@ main {
           div.today_cloud_percent_icon {
             display: flex;
             align-items: center;
-            *background-color: #fff;
             margin-right: 5px;
           }
 
           div.today_cloud_percent_number {
             display: flex;
             align-items: center;
-            *background-color: color(secondary);
 
             p {
               font-size: 35px;
@@ -332,7 +324,6 @@ main {
           }
 
           div.today_cloud_percent_measure_and_title {
-            *background-color: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -356,7 +347,6 @@ main {
 
       // start tomorrow block and next two days
       div.tomorrow_and_next_two_days_previson {
-        *background-color: #fff;
         flex: 1;
         padding: 26px 0px 0px 90px;
 
@@ -370,7 +360,6 @@ main {
               display: flex;
 
               div.tomorrow_left_section {
-                *background-color: #ccc;
                 flex: 1;
 
                 div.tomorrow_title {
@@ -391,7 +380,6 @@ main {
                     font-size: 150px;
                     font-weight: 300;
                     margin-top: -10px;
-                    *background-color: #fff;
                     margin-right: -5px;
                     color: color(secondary);
                   }
@@ -401,7 +389,6 @@ main {
                     align-items: center;
                     height: 80%;
                     margin-top: 10px;
-                    *background-color: #fff;
                     color: color(secondary);
 
                     p.symbol {
@@ -454,7 +441,6 @@ main {
 
                     div.tomorrow_max_temp_symbol_degree_and_title {
                       width: 100%;
-                      *background-color: #ccc;
                       display: flex;
                       flex-direction: column;
                       justify-content: center;
@@ -516,7 +502,6 @@ main {
 
                     div.tomorrow_min_temp_symbol_degree_and_title {
                       width: 100%;
-                      *background-color: #ccc;
                       display: flex;
                       flex-direction: column;
                       justify-content: center;
@@ -577,7 +562,6 @@ main {
 
                     div.tomorrow_cloud_symbol_degree_and_title {
                       width: 100%;
-                      *background-color: #ccc;
                       display: flex;
                       flex-direction: column;
                       justify-content: center;
@@ -625,7 +609,6 @@ main {
 
           div.next_two_days {
             width: 100%;
-            *background-color: #fff;
             display: flex;
             
             div {
@@ -662,12 +645,9 @@ main {
               div.next_two_days_left_degree_symbol {
                 width: 60%;
                 display: flex;
-                *background-color: #ccc;
                 margin: -5px auto auto auto;
 
-                div {
-                  *flex: 1;
-                }
+                
                 div.next_two_days_left_degree_number {
                   p {
                     font-size: 100px;
@@ -700,7 +680,6 @@ main {
               div.next_two_days_left_open_button {
                   width: 75%;
                   margin: auto;
-                  *background-color: #898;
 
                   button {
                     width: 100%;
@@ -749,12 +728,8 @@ main {
               div.next_two_days_right_degree_symbol {
                 width: 60%;
                 display: flex;
-                *background-color: #ccc;
                 margin: -5px auto auto auto;
 
-                div {
-                  *flex: 1;
-                }
                 div.next_two_days_right_degree_number {
                   p {
                     font-size: 100px;
@@ -787,7 +762,6 @@ main {
               div.next_two_days_right_open_button {
                   width: 75%;
                   margin: auto;
-                  *background-color: #898;
 
                   button {
                     width: 100%;
@@ -871,7 +845,6 @@ main {
             width: 100%;
             text-align: center;
             margin: 5px 0 -2px 0;
-            *background-color: #fff;
 
             img {
               width: 40px;
@@ -881,7 +854,6 @@ main {
           div.next_8days_block_temperature_symbol_title {
             display: flex;
             color: color(primary);
-            *background-color: #fff;
             width: 85%;
             margin: auto;
 
@@ -937,8 +909,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    *width: 100vw;
-    *height: 100vh;
     position: fixed;
     padding: 0 20px;
     top: 0;
@@ -991,14 +961,11 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    *opacity: 0;
     z-index: 99999;
     
     display: flex;
     align-items: center;
     justify-content: center;
-
-    *display: none;
 
     div.loader_container {
       width: 100%;
@@ -1068,7 +1035,6 @@ main {
               div.weather_filter_para_icons {
                 display: flex;
                 margin-left: auto;
-                *background-color: #ccc;
                 div {
                   width: 40px;
                   height: 40px;
@@ -1076,7 +1042,6 @@ main {
                   justify-content: center;
                   align-items: center;
                   border-radius: 50%;
-                  *background-color: #8062621f;
 
                   &:hover {
                     background-color: #80626263;
@@ -1113,8 +1078,6 @@ main {
                 margin: 4px;
 
                   div.dropdown_options {
-
-                      *display: none;
                       width: 100%;
                       max-height: 200px;
                       overflow-y: auto;
@@ -1228,7 +1191,6 @@ main {
                 padding: 10px 10px;
                 margin-bottom: 5px;
                 color: #806262;
-                *border-radius: 5px;
 
                 &:focus {
                   border: 1px solid color(primary);
@@ -1370,7 +1332,6 @@ div.goodbye_message {
 div.fadeInSingleContainer {
   z-index: -999999999999999999999 !important;
   opacity: 0 !important;
-  *animation: fadeIn 0.7s ease forwards;
 }
 
 div.single_view_panel_conatiner {

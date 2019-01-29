@@ -633,7 +633,7 @@ async function handleFetchWeatherData(obj) {
   // base URLs
 
   const userIpLink = "https://api.ipify.org?format=json";
-  const ipStackLink = "https://cors-anywhere.herokuapp.com/http://api.ipstack.com/"; /// e.g : http://api.ipstack.com/YourIpAddress?access_key=YourKey
+  const ipStackLink = "http://api.ipstack.com/"; /// e.g : http://api.ipstack.com/YourIpAddress?access_key=YourKey
   const weatherLink = "https://api.weatherbit.io/v2.0/forecast/daily?"; /// e.g : https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key={API_KEY}
   const translateLink = `https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181219T222649Z.bc0bff1e7a956a89.ced4abb02cd023aad687ede450469d919261b8d3&text=Today&text=Tomorrow&text=Next 8 Days&text=Open&text=More Details&lang=${language}`;
   // fetch user ip

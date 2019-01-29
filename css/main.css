@@ -50,8 +50,6 @@ div.hidden,
     opacity: 1;
   }
   to {
-    *-webkit-transform: scale(0);
-    *        transform: scale(0);
     opacity: 0;
   }
 }
@@ -62,8 +60,6 @@ div.hidden,
     opacity: 1;
   }
   to {
-    *-webkit-transform: scale(0);
-    *        transform: scale(0);
     opacity: 0;
   }
 }
@@ -227,7 +223,6 @@ main #wrapper div.top_container div.today_previson div.today_status_feature div.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  *background-color: #fff;
   margin-right: 13px;
 }
 
@@ -248,7 +243,6 @@ main #wrapper div.top_container div.today_previson div.today_status_feature div.
 }
 
 main #wrapper div.top_container div.today_previson div.today_status_feature div.today_max_temp_measure_and_title {
-  *background-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,7 +284,6 @@ main #wrapper div.top_container div.today_previson div.today_status_feature div.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  *background-color: #fff;
   margin-right: 13px;
 }
 
@@ -301,7 +294,6 @@ main #wrapper div.top_container div.today_previson div.today_status_feature div.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  *background-color: #707070;
 }
 
 main #wrapper div.top_container div.today_previson div.today_status_feature div.today_min_temp_number p {
@@ -311,7 +303,6 @@ main #wrapper div.top_container div.today_previson div.today_status_feature div.
 }
 
 main #wrapper div.top_container div.today_previson div.today_status_feature div.today_min_temp_measure_and_title {
-  *background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,7 +344,6 @@ main #wrapper div.top_container div.today_previson div.today_status_feature div.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  *background-color: #fff;
   margin-right: 5px;
 }
 
@@ -364,7 +354,6 @@ main #wrapper div.top_container div.today_previson div.today_status_feature div.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  *background-color: #707070;
 }
 
 main #wrapper div.top_container div.today_previson div.today_status_feature div.today_cloud_percent_number p {
@@ -374,7 +363,6 @@ main #wrapper div.top_container div.today_previson div.today_status_feature div.
 }
 
 main #wrapper div.top_container div.today_previson div.today_status_feature div.today_cloud_percent_measure_and_title {
-  *background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -400,7 +388,6 @@ main #wrapper div.top_container div.today_previson div.today_status_feature div.
 }
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson {
-  *background-color: #fff;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -422,7 +409,6 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
 }
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.tomorrow_block div.tomorrow_left_and_right_section_wrapper div.tomorrow_left_section {
-  *background-color: #ccc;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -449,7 +435,6 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
   font-size: 150px;
   font-weight: 300;
   margin-top: -10px;
-  *background-color: #fff;
   margin-right: -5px;
   color: #707070;
 }
@@ -463,7 +448,6 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
           align-items: center;
   height: 80%;
   margin-top: 10px;
-  *background-color: #fff;
   color: #707070;
 }
 
@@ -528,7 +512,6 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.tomorrow_block div.tomorrow_left_and_right_section_wrapper div.tomorrow_right_section div.tomorrow_max_min_temp_cloud div.tomorrow_max_temp div.tomorrow_max_temp_symbol_degree_and_title {
   width: 100%;
-  *background-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -607,7 +590,6 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.tomorrow_block div.tomorrow_left_and_right_section_wrapper div.tomorrow_right_section div.tomorrow_max_min_temp_cloud div.tomorrow_min_temp div.tomorrow_min_temp_symbol_degree_and_title {
   width: 100%;
-  *background-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -685,7 +667,6 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.tomorrow_block div.tomorrow_left_and_right_section_wrapper div.tomorrow_right_section div.tomorrow_max_min_temp_cloud div.tomorrow_cloud div.tomorrow_cloud_symbol_degree_and_title {
   width: 100%;
-  *background-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -735,7 +716,6 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.next_two_days {
   width: 100%;
-  *background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -780,14 +760,7 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  *background-color: #ccc;
   margin: -5px auto auto auto;
-}
-
-main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.next_two_days div.next_two_days_left div.next_two_days_left_degree_symbol div {
-  *-webkit-box-flex: 1;
-  *    -ms-flex: 1;
-  *        flex: 1;
 }
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.next_two_days div.next_two_days_left div.next_two_days_left_degree_symbol div.next_two_days_left_degree_number p {
@@ -824,7 +797,6 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.next_two_days div.next_two_days_left div.next_two_days_left_open_button {
   width: 75%;
   margin: auto;
-  *background-color: #898;
 }
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.next_two_days div.next_two_days_left div.next_two_days_left_open_button button {
@@ -874,14 +846,7 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  *background-color: #ccc;
   margin: -5px auto auto auto;
-}
-
-main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.next_two_days div.next_two_days_right div.next_two_days_right_degree_symbol div {
-  *-webkit-box-flex: 1;
-  *    -ms-flex: 1;
-  *        flex: 1;
 }
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.next_two_days div.next_two_days_right div.next_two_days_right_degree_symbol div.next_two_days_right_degree_number p {
@@ -918,7 +883,6 @@ main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomo
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.next_two_days div.next_two_days_right div.next_two_days_right_open_button {
   width: 75%;
   margin: auto;
-  *background-color: #898;
 }
 
 main #wrapper div.top_container div.tomorrow_and_next_two_days_previson div.tomorrow_and_next_two_days_wrapper div.next_two_days div.next_two_days_right div.next_two_days_right_open_button button {
@@ -1005,7 +969,6 @@ main #wrapper div.next_8days_container div.next_8days_forcast_blocks_container d
   width: 100%;
   text-align: center;
   margin: 5px 0 -2px 0;
-  *background-color: #fff;
 }
 
 main #wrapper div.next_8days_container div.next_8days_forcast_blocks_container div.next_8days_block div.next_8days_block_icon img {
@@ -1017,7 +980,6 @@ main #wrapper div.next_8days_container div.next_8days_forcast_blocks_container d
   display: -ms-flexbox;
   display: flex;
   color: #ffed0f;
-  *background-color: #fff;
   width: 85%;
   margin: auto;
 }
@@ -1068,8 +1030,6 @@ div.signature_fixed {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  *width: 100vw;
-  *height: 100vh;
   position: fixed;
   padding: 0 20px;
   top: 0;
@@ -1116,7 +1076,6 @@ div.authorisation_panel {
   position: absolute;
   top: 0;
   left: 0;
-  *opacity: 0;
   z-index: 99999;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1127,7 +1086,6 @@ div.authorisation_panel {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  *display: none;
 }
 
 div.authorisation_panel div.loader_container {
@@ -1207,7 +1165,6 @@ div.authorisation_panel div.authorisation_panel_content div.weather_filter_para 
   display: -ms-flexbox;
   display: flex;
   margin-left: auto;
-  *background-color: #ccc;
 }
 
 div.authorisation_panel div.authorisation_panel_content div.weather_filter_para div.weather_filter_para_hide_close_tab div.weather_filter_para_icons div {
@@ -1223,7 +1180,6 @@ div.authorisation_panel div.authorisation_panel_content div.weather_filter_para 
       -ms-flex-align: center;
           align-items: center;
   border-radius: 50%;
-  *background-color: #8062621f;
 }
 
 div.authorisation_panel div.authorisation_panel_content div.weather_filter_para div.weather_filter_para_hide_close_tab div.weather_filter_para_icons div:hover {
@@ -1262,7 +1218,6 @@ div.authorisation_panel div.authorisation_panel_content div.weather_filter_para 
 }
 
 div.authorisation_panel div.authorisation_panel_content div.weather_filter_para div.weather_filter_para_form div.input_container div.dropdown_options {
-  *display: none;
   width: 100%;
   max-height: 200px;
   overflow-y: auto;
@@ -1393,7 +1348,6 @@ div.authorisation_panel div.authorisation_panel_content div.weather_filter_para 
   padding: 10px 10px;
   margin-bottom: 5px;
   color: #806262;
-  *border-radius: 5px;
 }
 
 div.authorisation_panel div.authorisation_panel_content div.weather_filter_para div.weather_filter_para_form div input:focus {
@@ -1545,8 +1499,6 @@ div.goodbye_message p.sub_message_jok {
 div.fadeInSingleContainer {
   z-index: -999999999999999999999 !important;
   opacity: 0 !important;
-  *-webkit-animation: fadeIn 0.7s ease forwards;
-  *        animation: fadeIn 0.7s ease forwards;
 }
 
 div.single_view_panel_conatiner {
