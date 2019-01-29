@@ -633,7 +633,7 @@ async function handleFetchWeatherData(obj) {
   // base URLs
 
   const userIpLink = "https://api.ipify.org?format=json";
-  const ipStackLink = "http://api.ipstack.com/"; /// e.g : http://api.ipstack.com/YourIpAddress?access_key=YourKey
+  const ipStackLink = "https://cors-anywhere.herokuapp.com/http://api.ipstack.com/"; /// e.g : http://api.ipstack.com/YourIpAddress?access_key=YourKey
   const weatherLink = "https://api.weatherbit.io/v2.0/forecast/daily?"; /// e.g : https://api.weatherbit.io/v2.0/forecast/daily?city=Raleigh,NC&key={API_KEY}
   const translateLink = `https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181219T222649Z.bc0bff1e7a956a89.ced4abb02cd023aad687ede450469d919261b8d3&text=Today&text=Tomorrow&text=Next 8 Days&text=Open&text=More Details&lang=${language}`;
   // fetch user ip
@@ -644,7 +644,6 @@ async function handleFetchWeatherData(obj) {
     )
     .then(json => json)
     .catch(e => {
-        console.log('first');
       loaderContainer.innerHTML = erroMessage();
       return;
     });
@@ -654,7 +653,6 @@ async function handleFetchWeatherData(obj) {
   .then(result => result.json())
   .then(data => data)
   .catch(e => {
-      console.log('second')
     loaderContainer.innerHTML = erroMessage();
     return;
   });
@@ -667,7 +665,6 @@ async function handleFetchWeatherData(obj) {
     .then(result => result.json())
     .then(data => data)
     .catch(e => {
-        console.log('there');
       loaderContainer.innerHTML = erroMessage();
       return;
     });
@@ -678,7 +675,6 @@ await fetch(translateLink)
   .then(result => result.json())
   .then(translatedText => displayWeatherInfo(weatherData, translatedText, city))
   .catch(e => {
-      console.log('here')
     loaderContainer.innerHTML = erroMessage(e);
     return;
   });
@@ -1062,9 +1058,6 @@ function displayWeatherInfo(data, translatedText, cityObj) {
 // nextHeightDaysContainer.addEventListener('click', displaySingleView);
 
 function displaySingleView() {
-
-  // get the element that has been click
-  const elementClicked = this;
 
   // const get the id or unique identifier of the clicked element 
   const elementClickedId = this.dataset.id;
