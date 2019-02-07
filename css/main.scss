@@ -985,6 +985,7 @@ main {
         background-color: color(whiter);
         padding: 70px 80px 0 80px;
         border-radius: 20px;
+        width: 75%;
 
           div.authorisation_panel_title {
             width: 100%;
@@ -1319,10 +1320,6 @@ div.goodbye_message {
       color: #806262;
     }
 }
-
-
-
-
 
 
 
@@ -1924,4 +1921,35 @@ div.greet_the_user_container {
       
     }
   }
+}
+
+// not mobile version 
+div.not_mobile_message {
+  display: none;
+}
+
+@media only screen and (max-width: 1135px) {
+
+// movile version not available 
+div.not_mobile_message {
+  width: 100vw;
+  height: 100vh;
+  background-color: #806262;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 9999999999999999999 !important;
+
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+  }
+}
+
 }
