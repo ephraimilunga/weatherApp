@@ -17,7 +17,7 @@ _and reload the page_
 
 - [Weatherbit](https://www.weatherbit.io/api) (main api in the project) : is one of the the best weather api that gives developers endless features such **weather observations from over 45,000 live weather stations, historical weather data for the past 10 years from our archive of more than 120,000 stations, and highly localized weather forecasts for any point on the globe**.
 - [IPfy](https://www.ipify.org/) : is a simple public IP Address API that allows developers to get the user IP programmatically.
-- [ipStack](https://ipstack.com/) : Locate and idendify visitor by IP Address. IpStack return useful data like city_name, country_name, region_code, latitude and logitude, ...
+- [Geobytes](http://getcitydetails.geobytes.com/) : Locate and idendify visitor by IP Address. Geobytes GetCityDetails return useful data like city_name, country_name, region_code, latitude and logitude, ...
 - [Yandex](https://tech.yandex.com/translate/doc/dg/reference/translate-docpage/) : Translates text to the specified language.
 
 # Tools used in the Project
