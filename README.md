@@ -27,6 +27,6 @@ _and reload the page_
 
 # What I have learnd
 
-- Reading various apis document and use them
+- Reading various apis documentation and use them
 
 # Thank you to check it out :)
